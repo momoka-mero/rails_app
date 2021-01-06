@@ -1,0 +1,42 @@
+<h1>Logs#index</h1>
+
+<%if user_signed_in? %>
+<%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+<%= link_to "My page", user_path(current_user.id) %>
+<%= link_to "Users", users_path %>
+
+<h2>投稿する</h2>
+  <%= form_for @log do |form| %>
+      <%= form.label :breakfast %>
+      <%= form.text_field :brealfast %>
+
+      <%= form.label :lunch %>
+      <%= form.text_field :lunch %>
+
+      <%= form.label :dinner %>
+      <%= form.text_field :dinner %>
+
+      <%= form.label :Target %>
+      <%= form.collection_select :goal_id, Target.all, :id, :weight %>
+
+      <%= form.label :comment %>
+      <%= form.text_field :comment %>
+
+      <div class="actions">
+      <%= form.submit %>
+      </div>
+  <% end %>
+
+
+  <h2>投稿一覧</h2>
+  <% @logs.each do |log| %>
+    <a href="/users/<%= log.user.id %>"><%= log.user.name %></a>
+    (<%= log.liked_users.count %>)
+  <% end %>
+
+<% else %>
+  <%= link_to "Registration", new_user_registration_path %>
+  <%= link_to "Log in", new_user_session_path %>
+<% end %>
+
+<p>Find me in app/views/logs/index.html.erb</p>

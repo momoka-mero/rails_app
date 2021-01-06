@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brealfast: MyString
+  : MyString
+  lunch: MyString
+  : MyString
+  dinner: MyString
+  : MyString
+  goal_id: MyString
+  : 1
+  comment: MyString
+  : MyString
+  user: MyString
+  : one
+
+two:
+  brealfast: MyString
+  : MyString
+  lunch: MyString
+  : MyString
+  dinner: MyString
+  : MyString
+  goal_id: MyString
+  : 1
+  comment: MyString
+  : MyString
+  user: MyString
+  : two
