@@ -36,7 +36,7 @@ class LogsController < ApplicationController
 
   private
   def log_params
-    params.require(:log).permit(:brealfast, :lunch, :dinner, :comment, :target_id)
+    params.require(:log).permit(:brealfast, :lunch, :dinner, :comment)
   end
 
   def edit_delete_user
