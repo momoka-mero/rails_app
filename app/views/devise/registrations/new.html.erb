@@ -32,10 +32,6 @@
     <%= f.text_field :name ,autofocus: true, autocomplete: "group_id"%>
   </div>
 
-  <div class="field">
-    <%= f.label :Target %><br />
-    <%= f.collection_select :goal_id, Target.all, :id, :weight %>
-  </div>
 
   <hr class="my-4">
 
