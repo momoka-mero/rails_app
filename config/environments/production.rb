@@ -101,9 +101,7 @@ Rails.application.configure do
   user_name: ENV['MAILER_USER'],
   password: ENV['MAILER_PASSWORD'],
   authentication: :login
-}
-
-}
+  }
 
 
   # Inserts middleware to perform automatic connection switching.
