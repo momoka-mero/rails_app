@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/show'
   devise_for :users
-  devise_for :logs
+
 
   resources :users, only: [:index, :show]
   resources :logs, only: [:index, :show, :create, :destroy, :log] do
