@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :logs, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_logs, through: :likes, source: :log
-
   belongs_to :target, optional: true
 
 
