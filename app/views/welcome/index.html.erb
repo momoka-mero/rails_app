@@ -1,0 +1,12 @@
+<div class="container">
+<h1>Welcome Meal share app</h1>
+<img class="d-block mx-auto mb-4">
+ <%= image_tag "https://1.bp.blogspot.com/-HyIFKnT4YUs/WGYi4WrfPlI/AAAAAAABAu0/MkBHhYM3C4MwZEP5qTgPzRqIauWQ7Iw7wCLcB/s800/character_food_gohan.png",height:"144" %>
+
+<% if user_signed_in? %>
+  <p>You are <%= current_user.name %></p>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'Login', new_user_session_path %>
+<% end %>
+</div>

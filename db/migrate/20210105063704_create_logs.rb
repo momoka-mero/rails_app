@@ -11,6 +11,8 @@ class CreateLogs < ActiveRecord::Migration[6.0]
       t.string :comment
 
       t.string :user
+
+      t.integer :target_id
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

@@ -1,42 +1,57 @@
-<h1>Logs#index</h1>
+<div class="container">
+  <h1>Logs</h1>
+  <hr class="my-4">
 
-<%if user_signed_in? %>
-<%= link_to "Log out", destroy_user_session_path, :method => :delete %>
-<%= link_to "My page", user_path(current_user.id) %>
-<%= link_to "Users", users_path %>
+  <%if user_signed_in? %>
+    <div class="py-5 text-center">
+    <h2>投稿する</h2>
 
-<h2>投稿する</h2>
-  <%= form_for @log do |form| %>
-      <%= form.label :breakfast %>
-      <%= form.text_field :brealfast %>
+          <%= form_for @log do |form| %>
+          <div class="field">
+            <%= form.label :breakfast %>
+            <%= form.text_field :brealfast %>
+          </div>
 
-      <%= form.label :lunch %>
-      <%= form.text_field :lunch %>
+          <div class="field">
+            <%= form.label :lunch %>
+            <%= form.text_field :lunch %>
+          </div>
 
-      <%= form.label :dinner %>
-      <%= form.text_field :dinner %>
+          <div class="field">
+            <%= form.label :dinner %>
+            <%= form.text_field :dinner %><br>
+          </div>
 
-      <%= form.label :Target %>
-      <%= form.collection_select :goal_id, Target.all, :id, :weight %>
+          <div class="field">
+            <%= form.label :Goal %>
+            <%= form.collection_select :target_id, Target.all, :id, :weight %>
+          </div>
 
-      <%= form.label :comment %>
-      <%= form.text_field :comment %>
+          <div class="field">
+            <%= form.label :comment %>
+            <%= form.text_field :comment %>
+          </div>
 
-      <div class="actions">
-      <%= form.submit %>
-      </div>
+          <div class="actions">
+            <%= form.submit %>
+          </div>
+          <% end %>
+    </div>
+
+    <hr class="my-4">
+    <div class="py-5 text-center">
+      <h3>投稿一覧</h3>
+      
+      <% @logs.each do |log| %>
+        <a href="/users/<%= log.user.id %>"><%= log.user.name %></a>
+        (<%= log.liked_users.count %>)
+      <br>
+      <% end %>
+    </div>
+
+
+  <% else %>
+    <%= link_to "Registration", new_user_registration_path %><br>
+    <%= link_to "Log in", new_user_session_path %>
   <% end %>
-
-
-  <h2>投稿一覧</h2>
-  <% @logs.each do |log| %>
-    <a href="/users/<%= log.user.id %>"><%= log.user.name %></a>
-    (<%= log.liked_users.count %>)
-  <% end %>
-
-<% else %>
-  <%= link_to "Registration", new_user_registration_path %>
-  <%= link_to "Log in", new_user_session_path %>
-<% end %>
-
-<p>Find me in app/views/logs/index.html.erb</p>
+</div>

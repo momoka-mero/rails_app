@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_05_124534) do
+ActiveRecord::Schema.define(version: 2021_01_10_151458) do
 
   create_table "goals", force: :cascade do |t|
     t.string "weight"
@@ -31,12 +31,12 @@ ActiveRecord::Schema.define(version: 2021_01_05_124534) do
     t.string "brealfast"
     t.string "lunch"
     t.string "dinner"
-    t.string "goal_id"
     t.string "comment"
     t.string "user"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "target_id"
     t.index ["user_id"], name: "index_logs_on_user_id"
   end
 
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_01_05_124534) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "goal_id"
+    t.integer "target_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
