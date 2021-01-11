@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:index, :show]
-  resources :logs, only: [:index, :show, :create, :destroy, :log] do
+  resources :logs, only: [:index, :show, :create, :destroy] do
     resources :likes, only: [:create, :destroy]
   end
 
