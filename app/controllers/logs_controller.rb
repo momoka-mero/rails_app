@@ -28,8 +28,10 @@ class LogsController < ApplicationController
     @log = Log.new(log_params)
     @log.user_id = current_user.id
     if @log.save
+      flash.notice = '送信しました。'
       redirect_back(fallback_location: root_path)
     else
+      flash.now.alert = 'エラー'
       redirect_back(fallback_location: root_path)
     end
   end

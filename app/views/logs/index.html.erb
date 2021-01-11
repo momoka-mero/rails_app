@@ -28,9 +28,9 @@
             <%= form.text_field :comment %>
           </div>
 
-          <div class="actions">
-            <%= form.submit %>
-          </div>
+        
+          <%= form.submit %>
+          
           <% end %>
     </div>
 
@@ -51,3 +51,5 @@
     <%= link_to "Log in", new_user_session_path %>
   <% end %>
 </div>
+
+<%= render "devise/shared/links" %>
