@@ -1,26 +1,8 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # rails_app
 # rails_app
+
+
+大学の課題で「Ruby on RailsでSNSを作る」という課題があったので，初めてRailsを触りました．
+MVCの構造があまりよくわかっていなかったので，良い経験でした．
+課題の〆切に合わせたハリボテ実装で，追加機能やUI周りなど，改善点がたくさんあるので時間があったら改良．
